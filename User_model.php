@@ -1,0 +1,19 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class User_model extends CI_Model {
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->database();
+	}
+
+    public function insert($name, $password)
+    {
+        $data=array(    'name'=> $name, 
+                        'password'=> $password
+                    );
+                    return $this->db->insert('test', $data);
+    }
+}
